@@ -1,6 +1,6 @@
 # Qwen3-TTS Local Voice
 
-A reusable Codex skill for generating **fixed character voice assets** locally on Apple Silicon with Qwen3-TTS VoiceDesign and MLX. It is designed for games, visual novels, audio dramas, and other projects where every line must be a stable, pre-generated file rather than runtime browser speech.
+A portable agent skill for generating **fixed character voice assets** locally on Apple Silicon with Qwen3-TTS VoiceDesign and MLX. It is designed for games, visual novels, audio dramas, and other projects where every line must be a stable, pre-generated file rather than runtime browser speech.
 
 ## What It Covers
 
@@ -55,13 +55,14 @@ python scripts/generate.py batch \
   --skip-existing
 ```
 
-## Install as a Codex Skill
+## Install as an Agent Skill
 
-Copy or symlink this repository into your Codex skills directory:
+Copy or symlink this repository into the skills directory used by your agent host. Common locations include `$HOME/.agents/skills` or a host-configured skills path:
 
 ```bash
-mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
-cp -R . "${CODEX_HOME:-$HOME/.codex}/skills/qwen3-tts-local-voice"
+SKILLS_DIR="${SKILLS_DIR:-$HOME/.agents/skills}"
+mkdir -p "$SKILLS_DIR"
+cp -R . "$SKILLS_DIR/qwen3-tts-local-voice"
 ```
 
 Then invoke it explicitly:
@@ -88,7 +89,6 @@ Only the `text` field is spoken. Remove tags such as `[sad]`, `<whisper>`, markd
 ```text
 .
 ├── SKILL.md
-├── agents/openai.yaml
 ├── examples/
 ├── references/
 ├── scripts/

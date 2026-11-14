@@ -94,10 +94,10 @@ These are real outputs generated with the VoiceDesign model on Apple Silicon. Cl
 
 | Voice | Language | Sample |
 | --- | --- | --- |
-| 低沉青年男声 · 守钟人 | Chinese | ![listen](assets/audio/samples/zh-male-lin.mp3) |
-| 轻柔女声 · 继承人 | Chinese | ![listen](assets/audio/samples/zh-female-an.mp3) |
-| Deep male narrator | English | ![listen](assets/audio/samples/en-male-doc.mp3) |
-| Clear female narrator | English | ![listen](assets/audio/samples/en-female-narrator.mp3) |
+| 低沉青年男声 · 守钟人 | Chinese | [▶ 试听](assets/audio/samples/zh-male-lin.mp3) |
+| 轻柔女声 · 继承人 | Chinese | [▶ 试听](assets/audio/samples/zh-female-an.mp3) |
+| Deep male narrator | English | [▶ Listen](assets/audio/samples/en-male-doc.mp3) |
+| Clear female narrator | English | [▶ Listen](assets/audio/samples/en-female-narrator.mp3) |
 
 ### Example Prompts
 

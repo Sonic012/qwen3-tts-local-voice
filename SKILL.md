@@ -59,9 +59,16 @@ This skill does not use runtime browser TTS. It produces fixed WAV/MP3 assets th
 
    This uses local MLX Whisper. The transcript should contain the intended spoken line and no voice-design instruction, English prompt fragment, or markup tag.
 
-6. Batch-generate the fixed assets:
+6. Batch-generate the fixed assets. Use `--dry-run` first to validate the manifest and print output paths:
 
    ```bash
+   python scripts/generate.py batch \
+     --project-dir "$PROJECT_DIR" \
+     --manifest "$PROJECT_DIR/examples/manifest.example.json" \
+     --output-dir "$PROJECT_DIR/assets/audio/voice" \
+     --skip-existing \
+     --dry-run
+
    python scripts/generate.py batch \
      --project-dir "$PROJECT_DIR" \
      --model "$PROJECT_DIR/models/Qwen3-TTS-12Hz-1.7B-VoiceDesign-8bit" \
@@ -81,6 +88,7 @@ This skill does not use runtime browser TTS. It produces fixed WAV/MP3 assets th
 - Use one reference clip per role and the Base voice-clone model if the same voice must remain stable across dozens of lines. A VoiceDesign model re-designs the voice on every call, which can drift.
 - Keep generated assets out of source control when the project does not want large binaries. Store the manifest and design specs, and regenerate deterministically.
 - Do not clone a real person's voice without documented consent. Prefer fictional voice-design descriptions for characters.
+- To use the production voice-clone path, add `ref_audio` and `ref_text` to a persona and pass `--clone-model` pointing to the Base model. The script verifies this requirement before loading a model.
 
 ## Files
 

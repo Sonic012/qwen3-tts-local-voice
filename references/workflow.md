@@ -28,6 +28,17 @@ VoiceDesign can vary slightly on every call. For a small audition set that is ac
 
 This is the recommended production path when dozens of lines must sound like the same actor.
 
+For scripted use, add this to a persona in the manifest:
+
+```json
+{
+  "ref_audio": "/absolute/path/to/reference.wav",
+  "ref_text": "The exact transcript of the reference clip."
+}
+```
+
+Then pass `--clone-model /path/to/Qwen3-TTS-12Hz-1.7B-Base-8bit`. Mixed manifests are supported: personas with `ref_audio`/`ref_text` use cloning, while personas with only `instruction` use VoiceDesign.
+
 ## Hardware
 
 - Apple Silicon (M1/M2/M3/M4) macOS.

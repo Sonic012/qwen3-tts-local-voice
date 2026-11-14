@@ -55,14 +55,24 @@ python scripts/generate.py batch \
   --skip-existing
 ```
 
+Validate targets before loading a model:
+
+```bash
+python scripts/generate.py batch \
+  --project-dir "$PROJECT_DIR" \
+  --manifest "$PROJECT_DIR/examples/manifest.example.json" \
+  --output-dir "$PROJECT_DIR/assets/audio/voice" \
+  --skip-existing \
+  --dry-run
+```
+
 ## Install as an Agent Skill
 
 Copy or symlink this repository into the skills directory used by your agent host. Common locations include `$HOME/.agents/skills` or a host-configured skills path:
 
 ```bash
 SKILLS_DIR="${SKILLS_DIR:-$HOME/.agents/skills}"
-mkdir -p "$SKILLS_DIR"
-cp -R . "$SKILLS_DIR/qwen3-tts-local-voice"
+git clone https://github.com/Sonic012/qwen3-tts-local-voice.git "$SKILLS_DIR/qwen3-tts-local-voice"
 ```
 
 Then invoke it explicitly:

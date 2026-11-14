@@ -20,18 +20,7 @@ if [ ! -x "$VENV/bin/python" ]; then
 fi
 
 "$VENV/bin/python" -m pip install --upgrade pip
-"$VENV/bin/python" -m pip install \
-  'mlx>=0.32.4' \
-  'mlx-audio>=0.6.5' \
-  soundfile \
-  numpy \
-  huggingface_hub \
-  transformers \
-  safetensors \
-  sentencepiece \
-  regex \
-  tqdm \
-  mlx-whisper
+"$VENV/bin/python" -m pip install -r "$(dirname "$0")/../requirements.txt"
 
 echo "Environment ready: $VENV"
 echo "Download the model: $VENV/bin/python $(dirname "$0")/download_model.py --dest $PROJECT_DIR/models/Qwen3-TTS-12Hz-1.7B-VoiceDesign-8bit"

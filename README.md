@@ -147,7 +147,7 @@ Only the `text` field is spoken. Remove tags such as `[sad]`, `<whisper>`, markd
 ├── examples/
 ├── references/
 ├── scripts/
-├── LICENSE
+├── LICENSE.txt
 └── THIRD_PARTY_NOTICES.md
 ```
 

@@ -1,6 +1,12 @@
 ---
 name: qwen3-tts-local-voice
 description: Generate fixed character voice assets locally with Qwen3-TTS VoiceDesign on Apple Silicon. Use for game or story dialogue, role auditions, batch MP3 generation, and offline voice production without a cloud TTS key.
+summary: Local offline TTS for fixed game/story voice assets on Apple Silicon.
+version: 0.2.0
+tags: [tts, voice, audio, offline, apple-silicon, mlx]
+keywords: [qwen3, tts, voice-design, game, dialogue, mp3]
+use_cases: [game dialogue, visual novel voices, audio drama, offline TTS]
+docs_url: https://github.com/Sonic012/qwen3-tts-local-voice
 ---
 
 # Qwen3-TTS Local Voice
@@ -89,6 +95,13 @@ This skill does not use runtime browser TTS. It produces fixed WAV/MP3 assets th
 - Keep generated assets out of source control when the project does not want large binaries. Store the manifest and design specs, and regenerate deterministically.
 - Do not clone a real person's voice without documented consent. Prefer fictional voice-design descriptions for characters.
 - To use the production voice-clone path, add `ref_audio` and `ref_text` to a persona and pass `--clone-model` pointing to the Base model. The script verifies this requirement before loading a model.
+
+## Limitations
+
+- Requires macOS on Apple Silicon with roughly 6 GB of free working memory, a one-time ~2.9 GB model download, and `ffmpeg` for MP3 conversion.
+- Designed for local batch production of fixed assets; it is not a cloud TTS service and does not synthesize speech at runtime in a browser or app.
+- Voice-clone mode needs a clean single-speaker reference clip (5–30 s) and its exact transcript. Do not clone a real person's voice without documented consent.
+- The transcription audit uses local Whisper and is a heuristic check, not a guarantee of audio quality; always listen to auditions before a full batch.
 
 ## Files
 

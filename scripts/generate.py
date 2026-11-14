@@ -6,9 +6,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-import numpy as np
-import soundfile as sf
-
 
 def clean_spoken_text(text):
     return re.sub(r"\[[^\]]+\]|<[^>]+>", "", text).strip()
@@ -73,6 +70,9 @@ def wav_to_mp3(wav_path, mp3_path):
 
 def write_audio(results, wav_path):
     wav_path.parent.mkdir(parents=True, exist_ok=True)
+    import numpy as np
+    import soundfile as sf
+
     audio = np.concatenate([np.asarray(result.audio) for result in results])
     sf.write(wav_path, audio, int(results[0].sample_rate))
 

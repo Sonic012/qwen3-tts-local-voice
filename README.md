@@ -88,6 +88,51 @@ Use $qwen3-tts-local-voice to generate a fixed voice pack for this project. Gene
 - `references/manifest-schema.md` — field reference.
 - `references/workflow.md` — model behavior, prompt hygiene, and the optional voice-cloning workflow.
 
+## Audio Samples
+
+These are real outputs generated with the VoiceDesign model on Apple Silicon. Click to listen:
+
+| Voice | Language | Sample |
+| --- | --- | --- |
+| 低沉青年男声 · 守钟人 | Chinese | ![listen](assets/audio/samples/zh-male-lin.mp3) |
+| 轻柔女声 · 继承人 | Chinese | ![listen](assets/audio/samples/zh-female-an.mp3) |
+| Deep male narrator | English | ![listen](assets/audio/samples/en-male-doc.mp3) |
+| Clear female narrator | English | ![listen](assets/audio/samples/en-female-narrator.mp3) |
+
+### Example Prompts
+
+**中文男声**
+
+```text
+用 qwen3-tts-local-voice 生成一条试音：
+角色描述：27岁东亚男性，守钟人。低沉偏冷的青年男声，咬字克制，气息稳，带一点雨夜里的疲惫和警觉。中文普通话，电影悬疑游戏表演。
+台词：父亲说钟声只准敲十二下。那多出来的一下，是给谁的？
+```
+
+**中文女声**
+
+```text
+用 qwen3-tts-local-voice 生成一条试音：
+角色描述：25岁东亚女性，继承人。轻柔、偏高但不稚嫩的女声，表面礼貌克制，底下有紧绷和不安。不要甜腻，不要过度哭腔。中文普通话。
+台词：今晚要宣读的补充页，不是我三个月前看见的那一版。
+```
+
+**English male**
+
+```text
+Use qwen3-tts-local-voice to generate an audition:
+Voice description: A 45-year-old North American male documentary narrator. Deep, warm, and steady, with a calm gravitas and deliberate pacing. Neutral American English, studio-quality recording.
+Line: The clock struck twelve. One chime was missing. Nobody in the house dared to say its name.
+```
+
+**English female**
+
+```text
+Use qwen3-tts-local-voice to generate an audition:
+Voice description: A 28-year-old North American female game narrator. Clear, crisp, and slightly cool, with a controlled tension underneath. Not sweet, not overly emotional. Neutral American English, studio-quality recording.
+Line: The page they are about to read is not the one I saw three months ago.
+```
+
 ## Important Behavior
 
 VoiceDesign is called through `model.generate_voice_design(text, instruct, language)` directly. Do not call a generic multi-model wrapper with an `instruct` argument: routing differs between MLX versions and has caused voice-design instructions to leak into the generated speech.

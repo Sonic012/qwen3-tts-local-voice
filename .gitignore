@@ -7,3 +7,4 @@ __pycache__/
 *.mp3
 outputs/
 assets/audio/voice/
+!assets/audio/samples/*.mp3

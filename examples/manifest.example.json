@@ -1,0 +1,26 @@
+{
+  "personas": {
+    "lin": {
+      "instruction": "27岁东亚男性，守钟人。低沉偏冷的青年男声，咬字克制，气息稳。中文普通话，电影悬疑游戏表演。"
+    },
+    "an": {
+      "instruction": "25岁东亚女性，继承人。轻柔、偏高但不稚嫩的女声，表面礼貌克制。中文普通话。"
+    }
+  },
+  "lines": [
+    {
+      "id": "intro-os__lin",
+      "voice": "lin",
+      "scene": "第一幕",
+      "text": "先看清楚眼前的东西。今晚每个人都会说自己只做了该做的事。",
+      "file": "assets/audio/voice/intro-os__lin.mp3"
+    },
+    {
+      "id": "intro-os__an",
+      "voice": "an",
+      "scene": "第一幕",
+      "text": "先看清楚眼前的东西。今晚每个人都会说自己只做了该做的事。",
+      "file": "assets/audio/voice/intro-os__an.mp3"
+    }
+  ]
+}
